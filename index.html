@@ -5,8 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Shayan GTA Game Cheat Codes</title>
 
-<style>
-body{
+
+    <style>
+#music-btn{
+position:fixed;
+top:20px;
+right:20px;
+padding:12px 20px;
+font-size:18px;
+background:#ff9800;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+        body{
     margin:0;
     font-family:Arial, sans-serif;
     background:#111;
@@ -40,11 +53,34 @@ button:hover{
 }
 </style>
 </head>
+<script>
 
-<body>
-<audio controls autoplay loop>
-  <source src="gta-music.mp3" type="audio/mp3">
+let music = document.getElementById("bg-music");
+let button = document.getElementById("music-btn");
+
+function toggleMusic(){
+
+    if(music.paused){
+        music.play();
+        button.innerHTML = "🔊 Music ON";
+    }
+
+    else{
+        music.pause();
+        button.innerHTML = "🔇 Music OFF";
+    }
+
+}
+
+</script>
+</body>
+    <audio id="bg-music" loop>
+    <source src="gta-music.mp3" type="audio/mp3">
 </audio>
+
+<button id="music-btn" onclick="toggleMusic()">
+🔊 Music ON
+</button>
 <div class="container">
     <h1>The Shayan GTA Game Cheat Codes</h1>
 
