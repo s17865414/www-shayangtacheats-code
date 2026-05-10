@@ -50,6 +50,19 @@ tr:nth-child(even){
     border-radius:10px;
 }
 </style>
+    #music-btn{
+position:fixed;
+top:20px;
+right:20px;
+padding:12px 20px;
+font-size:18px;
+background:#ff9800;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+z-index:999;
+}
 </head>
 
 <body>
@@ -90,6 +103,34 @@ tr:nth-child(even){
 </table>
 
 <a class="back" href="index.html">Back To Home</a>
+<script>
 
+const music = document.getElementById("bg-music");
+const musicBtn = document.getElementById("music-btn");
+
+let isPlaying = false;
+
+musicBtn.addEventListener("click", function(){
+
+if(isPlaying){
+music.pause();
+musicBtn.innerHTML = "🔊 Play Music";
+}
+
+else{
+music.play();
+musicBtn.innerHTML = "🔇 Stop Music";
+}
+
+isPlaying = !isPlaying;
+
+});
+
+</script>
 </body>
+    <audio id="bg-music">
+<source src="gta-music.mp3" type="audio/mp3">
+</audio>
+
+<button id="music-btn">🔊 Play Music</button>
 </html>
